@@ -1,0 +1,21 @@
+// import scss file
+@import "bootswatch/spacelab/variables";
+@import "bootstrap";
+@import "bootswatch/spacelab/bootswatch";
+
+body
+{
+  margin :50px;
+}
+
+// .error_explanation
+// {
+//   font-size: 0.5em;
+//   font-style: italic;
+//   color: red;
+// }
+
+ul li
+{
+  display: inline;
+}
