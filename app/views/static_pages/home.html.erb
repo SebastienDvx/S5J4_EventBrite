@@ -1,8 +1,16 @@
+<% if !logged_in? %>
+
+<div class="center jumbotron">
 <h1>Bienvenue</h1>
 
 <p>
-  Veuillez vous connecter <%= link_to("ici", login_path ) %>
+  Veuillez vous connecter <%= link_to("Login .", login_path, class: "btn btn-primary" ) %>
 </p>
 <p>
-  Sinon, créez un compte <%= link_to("ici", new_user_path ) %>
+  Sinon, créez un compte <%= link_to("SignUp", new_user_path, class: "btn btn-success" ) %>
 </p>
+</div>
+<% else %>
+  <div class="center jumbotron">
+  <h1>Bienvenue </h1>
+<% end %>
