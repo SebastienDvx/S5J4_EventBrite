@@ -1,4 +1,5 @@
 // import scss file
+
 // @import "bootswatch/spacelab/variables";
 // @import "bootstrap";
 // @import "bootswatch/spacelab/bootswatch";
@@ -6,10 +7,14 @@
 //Or this theme
 @import "bootstrap-sprockets";
 @import "bootstrap";
+// @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
 
 /* mixins, variables, etc. */
 
 $gray-medium-light: #eaeaea;
+
 
 /* universal */
 
@@ -79,6 +84,13 @@ p {
     text-decoration: none;
   }
 }
+
+
+.navbar
+{
+  background-color: rgba(237, 128, 15, 0.66);
+}
+
 
 /* footer */
 
