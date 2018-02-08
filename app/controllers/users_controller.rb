@@ -15,6 +15,20 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+    if @user.id != current_user.id
+      flash[:danger] = 'OUI ! Mais non ... Bien essayé  !'
+      redirect_to root_path
+    end
+  end
+
+  def update
+    @user = User.find(params[:id])
+    if @user.update_attributes(user_params)
+      flash[:success] = "Profil mis à jour"
+      redirect_to @user
+    else
+      render 'edit'
+    end
   end
 
   private
