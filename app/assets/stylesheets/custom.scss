@@ -1,13 +1,13 @@
 // import scss file
 
-// @import "bootswatch/spacelab/variables";
-// @import "bootstrap";
-// @import "bootswatch/spacelab/bootswatch";
+@import "bootstrap";
+
+/* @import "bootswatch/spacelab/variables";*/
+/* @import "bootswatch/spacelab/bootswatch";*/
 
 //Or this theme
 @import "bootstrap-sprockets";
-@import "bootstrap";
-// @import url('https://fonts.googleapis.com/css?family=Montserrat');
+
 
 
 
@@ -116,4 +116,8 @@ footer {
       margin-left: 15px;
     }
   }
+}
+
+.event_description{
+  border: 1px black solid;
 }

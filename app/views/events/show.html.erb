@@ -1,0 +1,21 @@
+<div class="row">
+
+    <section class="user_info">
+      <h1>
+        <%= @event.title %>
+      </h1>
+      <div class="event_description">
+        <h2><%= @event.description %></h2>
+      </div>
+
+
+    <h3>L'évènement aura lieu à <%= @event.place %></h3>
+    <h3> Le <%= @event.date %> </h3>
+
+
+    </section>
+
+  <p>
+    <%= link_to "Modifier", edit_event_path, class: "btn btn-lg btn-primary" %>
+  </p>
+</div>

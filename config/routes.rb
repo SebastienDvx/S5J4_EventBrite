@@ -1,12 +1,20 @@
 Rails.application.routes.draw do
 
+#   -- static_pages --
+
+  root 'static_pages#home'
+
   get 'static_pages/home'
+
+  #    -- Sessions --
 
   get '/login', to: 'sessions#new'
 
   post '/login', to: 'sessions#create'
 
   delete '/logout', to: 'sessions#destroy'
+
+  #    -- Users --
 
   resources :users
 
@@ -15,7 +23,12 @@ Rails.application.routes.draw do
   # get '/user', to: 'users#show'
 
 
+#   - Events -
 
-  root 'static_pages#home'
+  resources :events
+
+  get '/new-event', to: 'events#new'
+  post '/new-event', to: 'events#create'
+
 
 end
