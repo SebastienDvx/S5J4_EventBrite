@@ -5,6 +5,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    # @creator = current_user.id
     if @user.save
       flash[:success] = "Connexion avec succès le #{Date.today}"
        redirect_to @user
@@ -30,6 +31,7 @@ class UsersController < ApplicationController
       render 'edit'
     end
   end
+
 
   private
 
