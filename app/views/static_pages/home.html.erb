@@ -2,7 +2,9 @@
 
 <div class="center jumbotron">
 <h1>Bienvenue</h1>
-
+<h2>Chez EventBrite, on se charge de vous trouver tous les évenements dont vous revez.</h2>
+<h2>Vous pouvez dès à présent consulter la liste des Event disponible à ce jour</h2>
+<h2>Pour une utilisation optimale, nous vous invitons à vous connecter ! :) </h2>
 <p>
   Veuillez vous connecter <%= link_to("Login .", login_path, class: "btn btn-primary" ) %>
 </p>
@@ -16,4 +18,9 @@
 <% else %>
   <div class="center jumbotron">
   <h1>Bienvenue </h1>
+  <h2>Chez EventBrite, on se charge de vous trouver tous les évenements dont vous revez.</h2>
+  <p>
+    Rendez-vous aux Events <%= link_to("Les Events ! ", events_path, class: "btn btn-info")%>
+  </p>
+
 <% end %>
