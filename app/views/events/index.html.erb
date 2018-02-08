@@ -1,4 +1,10 @@
-<strong><h2>Tous les Events</h2></strong>
+<strong><h3>Tous les Events</h3></strong>
+
+  <% if !logged_in? %>
+    <h2>Connectez vous pour plus d'informations sur les Events !</h2>
+    <h2><%= link_to("SignUp", signup_path, class: "btn btn-success" ) %></h2>
+  <% end %>
+
 
 <table class="table table-hover">
   <tr>
