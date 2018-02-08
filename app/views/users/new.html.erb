@@ -7,8 +7,8 @@
       <% if @user.errors.any? %>
           <div id="error_explanation">
             <h2>
-              <%= pluralize(@user.errors.count, "error") %> prohibited
-              this user from being saved:
+              <%= pluralize(@user.errors.count, "erreur") %> empêche la sauvegarde
+              de ce formulaire :
             </h2>
             <ul>
               <% @user.errors.full_messages.each do |msg| %>

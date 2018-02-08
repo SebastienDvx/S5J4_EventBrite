@@ -1,12 +1,4 @@
 class UsersController < ApplicationController
-  def new
-    if logged_in?
-      @user = User.new
-    else
-      @user = User.new
-      flash.now[:danger] = "Veuillez vous inscrire/connecter avant de créer votre Event"
-    end
-  end
 
   def create
     @user = User.new(user_params)
@@ -16,6 +8,19 @@ class UsersController < ApplicationController
        redirect_to @user
     else
        render 'new'
+    end
+  end
+
+  def edit
+    @user = User.find(params[:id])
+  end
+
+  def new
+    if logged_in?
+      @user = User.new
+    else
+      @user = User.new
+      flash.now[:danger] = "Veuillez vous inscrire/connecter avant de créer votre Event"
     end
   end
 
@@ -31,10 +36,6 @@ class UsersController < ApplicationController
     else
       render 'edit'
     end
-  end
-
-  def edit
-    @user = User.find(params[:id])
   end
 
   private

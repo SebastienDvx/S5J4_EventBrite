@@ -8,6 +8,4 @@ validates :description, presence: true
 validates :date, presence: true
 validates :place, presence: true
 
-
-
 end

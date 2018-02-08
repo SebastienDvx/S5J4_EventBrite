@@ -1,13 +1,5 @@
 class EventsController < ApplicationController
 
-def index
-  @events = Event.all
-end
-
-  def new
-      @event = Event.new
-  end
-
   def create
     @event = Event.new(event_params)
     @event.creator = current_user
@@ -21,13 +13,45 @@ end
     end
   end
 
-  def show
+  def destroy
     @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to events_path
   end
 
   def edit
     @event = Event.find(params[:id])
   end
+
+  def index
+    @events = Event.all
+  end
+
+  def new
+      @event = Event.new
+  end
+
+  def participe
+    @event = Event.find(params[:id])
+    if
+      @event.attendees.include? current_user
+      flash[:warning] = "Vous êtes déjà inscrit"
+      redirect_to @event
+    else
+      @event.attendees << current_user
+      flash[:success] = "Félicitation, vous participez à l'événement !"
+      redirect_to @event
+    end
+  end
+
+  # def showattendees
+  #   @attendees = Event.users.attendees.all
+  # end
+
+  def show
+    @event = Event.find(params[:id])
+  end
+
 
   def update
     @event = Event.find(params[:id])
@@ -39,11 +63,6 @@ end
     end
   end
 
-  def destroy
-    @event = Event.find(params[:id])
-    @event.destroy
-    redirect_to events_path
-  end
 
   private
 
