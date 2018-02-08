@@ -12,7 +12,7 @@
     </div>
 
     <h3>L'évènement aura lieu à <%= @event.place %></h3>
-    <h3> Le <%= @event.date %> </h3>
+    <h3> Le <%= @event.date.strftime("%d/%m/%Y") %> </h3>
 
     <br />
 

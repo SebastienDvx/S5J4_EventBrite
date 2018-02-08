@@ -44,7 +44,7 @@ class EventsController < ApplicationController
     end
   end
 
-  def unfollow
+  def unfollow     #  https://ruby-doc.org/core-1.9.3/Array.html#method-i-delete
     @event = Event.find(params[:id])
     @event.attendees.delete(current_user)
     redirect_to current_user
