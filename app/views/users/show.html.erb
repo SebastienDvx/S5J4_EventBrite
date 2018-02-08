@@ -9,7 +9,7 @@
       </h1>
       <p> <%= @user.email %>
       <%  if @user.id == current_user.id %>
-        <p> <%= link_to('Modifier',  edit_user_path, class: "btn btn-lg btn-success") %> </p>
+        <p> <%= link_to('Modifier',  edit_user_path, class: "btn btn-lg btn-primary") %> </p>
       <%end%>
     </section>
   </aside>
@@ -34,7 +34,7 @@
    		<td> <%= event.place %> </td>
    		<td> <%= link_to('Afficher', event_path(event)) %> </td>
       <%  if @user.id == current_user.id %>
-   		 <td> <%= link_to('Editer mon événement', edit_event_path(event)) %> </td>
+   		 <td> <%= link_to('Modifier Event', edit_event_path(event)) %> </td>
       <%end%>
    		</tr>
    		<% end %>
