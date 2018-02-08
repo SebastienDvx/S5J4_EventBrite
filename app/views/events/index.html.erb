@@ -14,7 +14,7 @@
   <td><%= event.description %></td>
   <td><%= event.date %></td>
   <td><%= event.place %></td>
-  <td><%= link_to(event.creator.name, '#' ) %></td>
+  <td><%= link_to(event.creator.name, user_path(event.creator.id) ) %></td>
   <td><%=link_to("Voir", '#')%></td>
 </tr>
 

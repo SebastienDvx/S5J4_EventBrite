@@ -15,10 +15,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    if @user.id != current_user.id
-      flash[:danger] = 'OUI ! Mais non ... Bien essayé  !'
-      redirect_to root_path
-    end
+    # if @user.id != current_user.id
+    #   flash[:danger] = 'OUI ! Mais non ... Bien essayé  !'
+    #   redirect_to root_path
+    # end
   end
 
   def update
