@@ -9,7 +9,7 @@ class User < ApplicationRecord
   #
   # validates :password, presence: true,
   #                      length: { minimum: 6 }
-
-has_and_belongs_to_many :events
-
+  
+  has_many :created_events, class_name: "Event"
+	has_and_belongs_to_many :attended_events, class_name: "Event"
 end

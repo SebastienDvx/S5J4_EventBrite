@@ -1,17 +1,38 @@
 
 <h2>User Profile Page</h2>
+
 <div class="row">
-	<table class="table text">
-		<tr>
-			<th>Name</th>
-			<td><%=@user.name%></td>
-		</tr>
-		<tr>
-			<th>Email</th>
-			<td><%= @user.email %></td>
-		</tr>
-	</table>
-	<p>
-		<%= link_to "Modifier", edit_user_path(current_user), class: "btn btn-lg btn-success" %>
-	</p>
+  <aside class="col-md-4">
+    <section class="user_info">
+      <h1>
+      	<%= @user.name %>
+      </h1>
+      <p> <%= @user.email %>
+   <p> <%= link_to('Modifier',  edit_user_path(current_user), class: "btn btn-lg btn-success") %> </p>
+
+    </section>
+  </aside>
 </div>
+
+<h2> Evénements organisés </h2>
+
+      <table class="table table-hover">
+  		<tr>
+	    	<th>Nom de l'événement</th>
+	    	<th>Date</th>
+	    	<th>Lieu</th>
+	   		<th></th>
+	   		<th></th>
+ 	 	 </tr>
+
+
+     <% @user.created_events.each do |event| %>
+   		<tr>
+   		<td> <%= event.title %> </td>
+   		<td> <%= event.date %> </td>
+   		<td> <%= event.place %> </td>
+   		<td> <%= link_to('Afficher', event_path(event)) %> </td>
+   		<td> <%= link_to('Editer mon événement', edit_event_path(event)) %> </td>
+   		</tr>
+   		<% end %>
+    </table>

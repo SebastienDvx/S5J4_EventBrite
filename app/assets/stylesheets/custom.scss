@@ -2,8 +2,8 @@
 
 @import "bootstrap";
 
-/* @import "bootswatch/spacelab/variables";*/
-/* @import "bootswatch/spacelab/bootswatch";*/
+// @import "bootswatch/sketchy/variables";
+// @import "bootswatch/sketchy/bootswatch";
 
 //Or this theme
 @import "bootstrap-sprockets";
@@ -13,7 +13,7 @@
 
 /* mixins, variables, etc. */
 
-$gray-medium-light: #eaeaea;
+// $gray-medium-light: #eaeaea;
 
 
 /* universal */
@@ -58,7 +58,7 @@ h2 {
   margin-bottom: 30px;
   text-align: center;
   font-weight: normal;
-  color: $gray-light;
+  color: rgb(124, 125, 124);
 }
 
 p {
@@ -97,12 +97,12 @@ p {
 footer {
   margin-top: 45px;
   padding-top: 5px;
-  border-top: 1px solid $gray-medium-light;
-  color: $gray-light;
+  border-top: 1px solid rgb(124, 125, 124);
+  color: rgb(152, 149, 149);
   a {
-    color: $gray;
+    color: gray;
     &:hover {
-      color: $gray-darker;
+      color:rgb(61, 61, 61) ;
     }
   }
   small {

@@ -1,31 +1,23 @@
-<%@events.each do |event|%>
-<!-- <%= event.id%> -->
-<table>
+<table class="table table-hover">
   <tr>
     <th>Titre</th>
-    <td>
-      <%= event.title %>
-    </td>
-  </tr>
-  <tr>
     <th>Description</th>
-    <td>
-      <%= event.description %>
-    </td>
-  </tr>
-  <tr>
     <th>Date</th>
-    <td>
-      <%= event.date %>
-    </td>
-  </tr>
-  <tr>
     <th>Lieu</th>
-    <td>
-      <%= event.place %>
-    </td>
+    <th>créé par</th>
+    <th>Action</th>
   </tr>
-  <br>
-</table>
+
+<%@events.each do |event|%>
+<tr>
+  <td><%= event.title %></td>
+  <td><%= event.description %></td>
+  <td><%= event.date %></td>
+  <td><%= event.place %></td>
+  <td><%= link_to(event.creator.name, '#' ) %></td>
+  <td><%=link_to("Voir", '#')%></td>
+</tr>
 
 <%end%>
+
+</table>
