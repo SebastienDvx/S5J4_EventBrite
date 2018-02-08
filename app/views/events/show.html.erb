@@ -17,8 +17,8 @@
     <br />
 
     <%  if @event.creator.id == current_user.id %>
-      <%= link_to "Supprimer", event_path, method: :delete, class: "btn btn-danger" %>
       <%= link_to "Modifier", edit_event_path, class: "btn btn-lg btn-primary" %>
+      <%= link_to "Supprimer", event_path, method: :delete, class: "btn btn-danger" %>
     <%end%>
     <% if @event.attendees.include? current_user %>
       <%= link_to "Ne plus participer", { :controller => "events", :action => "unfollow"}, class: "btn btn-lg btn-danger" %>
