@@ -44,6 +44,14 @@ class EventsController < ApplicationController
     end
   end
 
+  def unfollow
+    @event = Event.find(params[:id])
+    @event.attendees.delete(current_user)
+    redirect_to current_user
+    flash[:warning] = "Vous ne suivez plus cet évenement."
+
+  end
+
   # def showattendees
   #   @attendees = Event.users.attendees.all
   # end

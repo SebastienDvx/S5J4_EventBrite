@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 #gem 'devise'
 #gem 'pundit'
 
-gem 'bootstrap-sass', '3.3.7'
+gem 'bootstrap-sass'
 gem 'bootstrap'
 gem 'bootswatch'
 gem 'bcrypt',                 '3.1.11'
