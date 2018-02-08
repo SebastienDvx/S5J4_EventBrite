@@ -1,11 +1,17 @@
 class UsersController < ApplicationController
   def new
-    @user = User.new
+    if logged_in?
+      @user = User.new
+    else
+      @user = User.new
+      flash.now[:danger] = "Veuillez vous inscrire/connecter avant de créer votre Event"
+    end
   end
 
   def create
     @user = User.new(user_params)
     if @user.save
+      log_in @user
       flash[:success] = "Connexion avec succès le #{Date.today}"
        redirect_to @user
     else
@@ -15,10 +21,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    # if @user.id != current_user.id
-    #   flash[:danger] = 'OUI ! Mais non ... Bien essayé  !'
-    #   redirect_to root_path
-    # end
   end
 
   def update
@@ -31,6 +33,9 @@ class UsersController < ApplicationController
     end
   end
 
+  def edit
+    @user = User.find(params[:id])
+  end
 
   private
 

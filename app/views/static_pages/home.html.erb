@@ -7,7 +7,10 @@
   Veuillez vous connecter <%= link_to("Login .", login_path, class: "btn btn-primary" ) %>
 </p>
 <p>
-  Sinon, créez un compte <%= link_to("SignUp", login_path, class: "btn btn-success" ) %>
+  Sinon, créez un compte <%= link_to("SignUp", signup_path, class: "btn btn-success" ) %>
+</p>
+<p>
+  Liste de tous les Events <%= link_to("Les Events ! ", events_path, class: "btn btn-info")%>
 </p>
 </div>
 <% else %>

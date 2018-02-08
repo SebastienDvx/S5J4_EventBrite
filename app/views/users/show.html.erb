@@ -8,8 +8,9 @@
       	<%= @user.name %>
       </h1>
       <p> <%= @user.email %>
-   <p> <%= link_to('Modifier',  edit_user_path(current_user), class: "btn btn-lg btn-success") %> </p>
-
+      <%  if @user.id == current_user.id %>
+        <p> <%= link_to('Modifier',  edit_user_path, class: "btn btn-lg btn-success") %> </p>
+      <%end%>  
     </section>
   </aside>
 </div>
