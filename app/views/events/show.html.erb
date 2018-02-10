@@ -21,9 +21,9 @@
       <%= link_to "Supprimer", event_path, method: :delete, class: "btn btn-danger" %>
     <%end%>
     <% if @event.attendees.include? current_user %>
-      <%= link_to "Ne plus participer", { :controller => "events", :action => "unfollow"}, class: "btn btn-lg btn-danger" %>
+      <%= link_to "Ne plus participer", unfollow_path, class: "btn btn-lg btn-danger" %>
     <% else %>
-      <%= link_to "Participer", { :controller => "events", :action => "participe"}, class: "btn btn-lg btn-success" %>
+      <%= link_to "Participer", subscribe_path, class: "btn btn-lg btn-success" %>
     <% end %>
 <br>
 

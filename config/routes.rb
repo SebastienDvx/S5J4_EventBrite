@@ -22,8 +22,8 @@ Rails.application.routes.draw do
 
   resources :events
 
-  get 'events/:id/participe/', to: 'events#participe'
-  get 'events/:id/unfollow', to: 'events#unfollow'
+  get 'events/:id/participe/', to: 'events#participe', as: 'subscribe'
+  get 'events/:id/unfollow', to: 'events#unfollow', as: 'unfollow'
   # get 'events/:id/attendees/', to: 'events#showattendees', as: 'attendees'
   get '/new-event', to: 'events#new'
   post '/new-event', to: 'events#create'
